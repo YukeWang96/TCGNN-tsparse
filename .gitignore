@@ -1,0 +1,4 @@
+*.log
+*.csv
+tc-gnn_ebd/
+tc-gnn/
