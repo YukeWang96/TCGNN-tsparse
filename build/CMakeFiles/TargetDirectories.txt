@@ -1,5 +1,5 @@
-/home/yuke/tSparse/build/CMakeFiles/edit_cache.dir
-/home/yuke/tSparse/build/CMakeFiles/rebuild_cache.dir
-/home/yuke/tSparse/build/src/CMakeFiles/spmm.dir
-/home/yuke/tSparse/build/src/CMakeFiles/edit_cache.dir
-/home/yuke/tSparse/build/src/CMakeFiles/rebuild_cache.dir
+/tcgnn/TCGNN-tsparse/build/CMakeFiles/edit_cache.dir
+/tcgnn/TCGNN-tsparse/build/CMakeFiles/rebuild_cache.dir
+/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/spmm.dir
+/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/edit_cache.dir
+/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/rebuild_cache.dir

@@ -5,6 +5,8 @@ set(tSparse_VERSION_MAJOR 0)
 set(tSparse_VERSION_MINOR 4)
 
 set (CMAKE_CXX_STANDARD 11)
+find_package(CUDA REQUIRED)
+include_directories(${CUDA_INCLUDE_DIRS})
 
 # ccache, cmake version > 3.4
 find_program(CCACHE_FOUND ccache)
@@ -43,7 +45,8 @@ set (CUDA_PROPAGATE_HOST_FLAGS ON)
 list(APPEND CUDA_NVCC_FLAGS -Xcompiler -fopenmp)
 
 #set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -G -g -O0 --relocatable-device-code=true -gencode arch=compute_75,code=compute_75 -gencode arch=compute_75,code=sm_75 --expt-relaxed-constexpr)
-set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -O3 --relocatable-device-code=true -gencode arch=compute_75,code=compute_75 -gencode arch=compute_75,code=sm_75 --expt-relaxed-constexpr)
+# set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -O3 --relocatable-device-code=true -gencode arch=compute_75,code=compute_75 -gencode arch=compute_75,code=sm_75 --expt-relaxed-constexpr)
+set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -O3 --relocatable-device-code=true -gencode arch=compute_86,code=compute_86 -gencode arch=compute_86,code=sm_86 --expt-relaxed-constexpr)
 
 include_directories( ${CMAKE_SOURCE_DIR}/external )
 

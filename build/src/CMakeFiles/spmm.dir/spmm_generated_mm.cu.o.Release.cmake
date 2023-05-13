@@ -57,29 +57,29 @@ if(NOT generated_file)
 endif()
 
 # Set these up as variables to make reading the generated file easier
-set(CMAKE_COMMAND "/usr/bin/cmake") # path
-set(source_file "/home/yuke/tSparse/src/mm.cu") # path
-set(NVCC_generated_dependency_file "/home/yuke/tSparse/build/src/CMakeFiles/spmm.dir//spmm_generated_mm.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/yuke/tSparse/build/src/CMakeFiles/spmm.dir//spmm_generated_mm.cu.o.depend") # path
-set(CUDA_make2cmake "/usr/share/cmake-3.22/Modules/FindCUDA/make2cmake.cmake") # path
-set(CUDA_parse_cubin "/usr/share/cmake-3.22/Modules/FindCUDA/parse_cubin.cmake") # path
+set(CMAKE_COMMAND "/root/miniconda3/lib/python3.10/site-packages/cmake/data/bin/cmake") # path
+set(source_file "/tcgnn/TCGNN-tsparse/src/mm.cu") # path
+set(NVCC_generated_dependency_file "/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/spmm.dir//spmm_generated_mm.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/spmm.dir//spmm_generated_mm.cu.o.depend") # path
+set(CUDA_make2cmake "/root/miniconda3/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindCUDA/make2cmake.cmake") # path
+set(CUDA_parse_cubin "/root/miniconda3/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/yuke/tSparse/build/src/CMakeFiles/spmm.dir//.") # path
-set(generated_file_internal "/home/yuke/tSparse/build/src/CMakeFiles/spmm.dir//./spmm_generated_mm.cu.o") # path
-set(generated_cubin_file_internal "/home/yuke/tSparse/build/src/CMakeFiles/spmm.dir//./spmm_generated_mm.cu.o.cubin.txt") # path
+set(generated_file_path "/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/spmm.dir//.") # path
+set(generated_file_internal "/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/spmm.dir//./spmm_generated_mm.cu.o") # path
+set(generated_cubin_file_internal "/tcgnn/TCGNN-tsparse/build/src/CMakeFiles/spmm.dir//./spmm_generated_mm.cu.o.cubin.txt") # path
 
-set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda-11.7/bin/nvcc") # path
-set(CUDA_NVCC_FLAGS -std=c++11;-Xcompiler;-fopenmp;-O3;--relocatable-device-code=true;-gencode;arch=compute_75,code=compute_75;-gencode;arch=compute_75,code=sm_75;--expt-relaxed-constexpr ;; ) # list
+set(CUDA_NVCC_EXECUTABLE "/root/miniconda3/bin/nvcc") # path
+set(CUDA_NVCC_FLAGS -std=c++11;-Xcompiler;-fopenmp;-O3;--relocatable-device-code=true;-gencode;arch=compute_86,code=compute_86;-gencode;arch=compute_86,code=sm_86;--expt-relaxed-constexpr ;; ) # list
 # Build specific configuration flags
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_DEBUG  ; )
 set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
-set(CUDA_NVCC_INCLUDE_DIRS [==[/usr/local/cuda-11.7/include;/home/yuke/tSparse/external;/usr/local/cuda-11.7/include]==]) # list (needs to be in lua quotes to address backslashes)
+set(CUDA_NVCC_INCLUDE_DIRS [==[/root/miniconda3/include;/root/miniconda3/include;/tcgnn/TCGNN-tsparse/external]==]) # list (needs to be in lua quotes to address backslashes)
 string(REPLACE "\\" "/" CUDA_NVCC_INCLUDE_DIRS "${CUDA_NVCC_INCLUDE_DIRS}")
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[_USE_CUDA]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-dc") # string
@@ -188,7 +188,7 @@ cuda_execute_process(
 # For CUDA 2.3 and below, -G -M doesn't work, so remove the -G flag
 # for dependency generation and hope for the best.
 set(depends_CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS}")
-set(CUDA_VERSION 11.7)
+set(CUDA_VERSION 11.6)
 if(CUDA_VERSION VERSION_LESS "3.0")
   # Note that this will remove all occurrences of -G.
   list(REMOVE_ITEM depends_CUDA_NVCC_FLAGS "-G")

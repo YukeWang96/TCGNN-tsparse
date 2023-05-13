@@ -1,4 +1,4 @@
-# Install script for directory: /home/yuke/tSparse/src
+# Install script for directory: /tcgnn/TCGNN-tsparse/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
